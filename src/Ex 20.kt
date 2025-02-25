@@ -4,6 +4,6 @@ fun main() {
     if (num % 2 == 0) {
         println("$num é um número par!")
     } else {
-        println("O número $num é ÍMPAR.")
+        println("O  número $num é ÍMPAR..")
     }
 }
