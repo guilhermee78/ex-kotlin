@@ -5,13 +5,12 @@
 
 fun main(){
     print("Qual foi a velocidade do carro?  ")
-    var velocidade = readln().toInt()
-    var limite = 80
-    var valorMulta = 5
+    val velocidade = readln().toInt()
+    val limite = 80
+    val valorMulta = 5
     if(velocidade > limite){
-        valorMulta = valorMulta * velocidade
-        print("Você foi multado, o valor da multa foi $valorMulta")
+        val excesso = velocidade - limite
+        val Multa = valorMulta * excesso
+        print("Você foi multado, o valor da multa foi $Multa")
     }
-
-
 }
