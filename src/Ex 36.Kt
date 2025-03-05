@@ -1,18 +1,14 @@
+// Pontos por atividade física
 fun main() {
-    print("Digite a quantidade de horas de atividade física no mês: ")
-    val horasAtividade = readLine()!!.toInt()
-    
-    var pontos = 0
-    
-    if (horasAtividade <= 10) {
-        pontos = horasAtividade * 2
-    } else if (horasAtividade <= 20) {
-        pontos = (10 * 2) + ((horasAtividade - 10) * 5)
-    } else {
-        pontos = (10 * 2) + (10 * 5) + ((horasAtividade - 20) * 10)
+    println("Quantas horas de atividade física você fez no mês?")
+    val horas = readln().toInt()
+
+    val pontos = when {
+        horas <= 10 -> horas * 2
+        horas <= 20 -> horas * 5
+        else -> horas * 10
     }
-    
-    val dinheiroGanho = pontos * 0.05
-    
-    println("Você ganhou $pontos pontos e faturou R$ %.2f".format(dinheiroGanho))
+
+    val dinheiro = pontos * 0.05
+    println("Você ganhou $pontos pontos e recebeu R$%.2f".format(dinheiro))
 }

@@ -1,25 +1,35 @@
-fun main() {
-    print("Digite seu peso (kg): ")
-    val peso = readLine()!!.toDouble()
-    
-    print("Digite sua altura (m): ")
-    val altura = readLine()!!.toDouble()
-    
-    val imc = peso / (altura * altura)
-    
-    var classificacao = ""
-    
-    if (imc < 18.5) {
-        classificacao = "Abaixo do peso"
-    } else if (imc < 25) {
-        classificacao = "Peso ideal"
-    } else if (imc < 30) {
-        classificacao = "Sobrepeso"
-    } else if (imc < 40) {
-        classificacao = "Obesidade"
-    } else {
-        classificacao = "Obesidade mórbida"
+//• O Índice de Massa Corpórea (IMC) é um valor calculado baseado na altura e
+//no peso de uma pessoa. De acordo com o valor do IMC, podemos classificar
+//o indivíduo dentro de certas faixas.
+//• abaixo de 18.5: Abaixo do peso • entre 18.5 e 25: Peso ideal
+//• entre 25 e 30: Sobrepeso
+//• entre 30 e 40: Obesidade
+//• acima de 40: Obseidade mórbida
+//Obs: O IMC é calculado pela expressão:
+// peso/altura2 (peso dividido pelo quadrado da altura)
+
+fun main(){
+    println("Qual é o seu peso?")
+    val peso = readln().toFloat()
+    println("Digite sua altura:")
+    val altura = readln().toFloat()
+    val alt = altura * altura
+    val imc = peso /  alt
+    if(imc >= 25 && imc.toInt() <= 30){
+        print("IMC = $imc, Está em caso de Sobrepeso")
+    }else{
+        if(imc >= 30 && imc.toInt() <= 40){
+            print("IMC = $imc, Está em caso de obesidade")
+        }else{
+            if(imc > 40){
+                print("IMC = $imc, Está em caso de obesidade mórbida")
+            }else{
+                if(imc < 18.5){
+                    print("IMC = $imc, está abaixo do peso")
+                }else{
+                    print("IMC = $imc, está no peso ideal")
+                }
+            }
+        }
     }
-    
-    println("Seu IMC é %.2f e sua classificação é: %s".format(imc, classificacao))
 }

@@ -1,14 +1,12 @@
-fun main() {
-    print("Digite um valor: ")
-    val numero = readLine()!!.toInt()
+//42- Faça um algoritmo que pergunte ao usuário um número inteiro e positivo qualquer
+//e mostre uma contagem até esse valor:
+//Ex: Digite um valor: 35
 
-    if (numero <= 0) {
-        println("Por favor, digite um número positivo.")
-    } else {
-        print("Contagem: ")
-        for (i in 1..numero) {
-            print("$i ")
-        }
-        println("Acabou!")
+fun main(){
+    println("Digite um número inteiro positivo:")
+    val num = readln().toInt()
+    for(i in 0..num){
+        print("$i ")
+
     }
 }

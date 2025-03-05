@@ -1,37 +1,24 @@
+//Reajuste de salário
 fun main() {
-    print("Digite o salário atual: ")
-    val salarioAtual = readLine()!!.toDouble()
+    println("Digite o salário atual:")
+    val salario = readln().toFloat()
 
-    print("Digite o gênero do funcionário (M para masculino, F para feminino): ")
-    val genero = readLine()!!.toUpperCase()
+    println("Digite o gênero (M para masculino, F para feminino):")
+    val genero = readln().uppercase()
 
-    print("Digite quantos anos o funcionário trabalha na empresa: ")
-    val anosTrabalhados = readLine()!!.toInt()
+    println("Quantos anos de empresa?")
+    val anos = readln().toInt()
 
-    var aumento = 0.0
-
-    if (genero == "F") {
-        if (anosTrabalhados < 15) {
-            aumento = 0.05
-        } else if (anosTrabalhados in 15..20) {
-            aumento = 0.12
-        } else {
-            aumento = 0.23
-        }
-    } else if (genero == "M") {
-        if (anosTrabalhados < 20) {
-            aumento = 0.03
-        } else if (anosTrabalhados in 20..30) {
-            aumento = 0.13
-        } else {
-            aumento = 0.25
-        }
-    } else {
-        println("Gênero inválido!")
-        return
+    val percentualAumento = when { 
+//avalia as condições de cima para baixo , e executa apenas a primeira que for verdadeira .
+        genero == "F" && anos < 15 -> 0.05
+        genero == "F" && anos <= 20 -> 0.12
+        genero == "F" -> 0.23
+        genero == "M" && anos < 20 -> 0.03
+        genero == "M" && anos <= 30 -> 0.13
+        else -> 0.25
     }
 
-    val novoSalario = salarioAtual * (1 + aumento)
-
-    println("Novo salário: R$ ${"%.2f".format(novoSalario)}")
+    val novoSalario = salario + (salario * percentualAumento)
+    println("O novo salário é: R$%.2f".format(novoSalario))
 }
