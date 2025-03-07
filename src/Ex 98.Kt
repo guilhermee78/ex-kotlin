@@ -5,13 +5,14 @@ fun main() {
     print("Digite o segundo número: ")
     val numero2 = readLine()!!.toInt()
 
-    print("Digite o terceiro número: ")
-    val numero3 = readLine()!!.toInt()
-
-    val maior = Maior(numero1, numero2, numero3)
-    println("O maior número entre $numero1, $numero2 e $numero3 é: $maior")
+    val soma = SuperSomador(numero1, numero2)
+    println("A soma dos números entre $numero1 e $numero2 é: $soma")
 }
 
-fun Maior(a: Int, b: Int, c: Int): Int {
-    return maxOf(a, b, c)
+fun SuperSomador(a: Int, b: Int): Int {
+    var soma = 0
+    for (i in a..b) {
+        soma += i
+    }
+    return soma
 }
